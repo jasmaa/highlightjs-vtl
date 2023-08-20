@@ -10,16 +10,21 @@ module.exports = function (hljs) {
   };
 
   const ESCAPED_IDENTIFIER = {
-    match: /\\\$\w+\b/,
+    match: /\\\$[\w\-]+\b/,
+  };
+
+  const LITERAL = {
+    match: /\b(?:true|false)\b/,
+    scope: "literal",
   };
 
   const KEYWORD = {
-    match: /\b(?:in)\b/,
+    match: /\b(?:eq|ne|gt|ge|lt|le|and|or|not|in)\b/,
     scope: "keyword",
   };
 
   const IDENTIFIER = {
-    match: /\$\w+\b/,
+    match: /\$[\w\-]+/,
     scope: "variable",
   };
 
@@ -37,7 +42,7 @@ module.exports = function (hljs) {
   };
 
   const PUNCTUATION = {
-    match: /(?:,|\.|\[|\]|{|})/,
+    match: /(?:,|\.|\[|\])/,
     scope: "punctuation",
   };
 
@@ -103,6 +108,7 @@ module.exports = function (hljs) {
       ESCAPED_DIRECTIVE,
       ESCAPED_IDENTIFIER,
       KEYWORD,
+      LITERAL,
       "self",
       DIRECTIVE,
       DIRECTIVE_WITH_CURLIES,
@@ -118,15 +124,36 @@ module.exports = function (hljs) {
     ],
   };
 
+  // TODO: figure out how to include IDENTIFIER_WITH_CURLIES inside ARGS
+  const IDENTIFIER_WITH_CURLIES = {
+    begin: [/\$/, /{/],
+    end: /}/,
+    beginScope: {
+      1: "variable",
+      2: "punctuation",
+    },
+    endScope: "punctuation",
+    contains: [
+      ESCAPED_DIRECTIVE,
+      ESCAPED_IDENTIFIER,
+      ARGS,
+      PROPERTY,
+      PUNCTUATION,
+      SINGLE_LINE_COMMENT,
+      MULTI_LINE_COMMENT,
+      DOC_COMMENT,
+    ],
+  };
+
   return {
     contains: [
       ESCAPED_DIRECTIVE,
       ESCAPED_IDENTIFIER,
-      KEYWORD,
       ARGS,
       DIRECTIVE,
       DIRECTIVE_WITH_CURLIES,
       IDENTIFIER,
+      IDENTIFIER_WITH_CURLIES,
       PROPERTY,
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,

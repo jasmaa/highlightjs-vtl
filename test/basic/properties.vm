@@ -1,0 +1,7 @@
+$customer.address
+$purchase.total
+$cart.customerDiscount
+
+
+${customer.address}
+${purchase.getTotal()}

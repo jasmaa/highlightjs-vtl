@@ -1,0 +1,25 @@
+## This is a single line comment.
+
+This is visible in the output ## This is a comment.
+
+
+This is text that is outside the multi-line comment.
+Online visitors can see it.
+
+#*
+  Thus begins a multi-line comment. Online visitors will not
+  see this text because the Velocity Templating Engine will
+  ignore it.
+*#
+
+Here is text outside the multi-line comment; it is visible.
+
+
+#**
+This is a VTL comment block and
+may be used to store such information
+as the document author and versioning
+information:
+@author
+@version 5
+*#

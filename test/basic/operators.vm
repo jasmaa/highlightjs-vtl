@@ -1,0 +1,10 @@
+#set ($a = true)
+#set ($b = false)
+
+#if ($a || $b)
+  short version 'or' was true
+#end
+
+#if ($a and $b)
+  text version 'and' was true
+#end

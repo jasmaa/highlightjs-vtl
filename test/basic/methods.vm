@@ -1,0 +1,9 @@
+$cart.calculateTotal()
+$customer.updatePurchases($cart)
+$shop.checkInventory()
+$cart.addTaxes(8, 16)
+
+# Property access
+$page.setTitle( "My Home Page" )
+$customer.getAddress()
+$purchase.getTotal()

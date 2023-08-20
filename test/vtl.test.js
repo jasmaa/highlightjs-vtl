@@ -3,7 +3,7 @@ const path = require("path");
 const hljs = require("highlight.js");
 const hljsVtl = require("../src/vtl.js");
 
-const filePaths = ["basic/hello-world.vm"];
+const filePaths = ["basic/hello-world.vm", "basic/string-interp.vm"];
 
 describe("VTL syntax highlighting", () => {
   beforeAll(() => {

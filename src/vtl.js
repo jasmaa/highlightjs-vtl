@@ -7,7 +7,6 @@ Category: web
 
 // TODO: account for curly directive: http://people.apache.org/~henning/velocity/html/ch03.html
 // TODO: account for escape: http://people.apache.org/~henning/velocity/html/ch03s04.html
-// TODO: account for string interp: http://people.apache.org/~henning/velocity/html/ch09s05.html
 module.exports = function (hljs) {
   const KEYWORD = {
     match: /\b(?:in)\b/,
@@ -37,6 +36,27 @@ module.exports = function (hljs) {
   const PUNCTUATION = {
     match: /(?:,|\.|\[|\]|\(|\)|{|})/,
     scope: "punctuation",
+  };
+
+  const STRING = {
+    begin: /"/,
+    end: /"/,
+    scope: "string",
+    contains: [
+      {
+        begin: [/\$/, /{/],
+        end: /}/,
+        beginScope: {
+          1: "variable",
+          2: "punctuation",
+        },
+        endScope: "punctuation",
+      },
+      {
+        match: /\$\w+/,
+        scope: "variable",
+      },
+    ],
   };
 
   const SINGLE_LINE_COMMENT = {
@@ -79,7 +99,7 @@ module.exports = function (hljs) {
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
       DOC_COMMENT,
-      hljs.QUOTE_STRING_MODE,
+      STRING,
       hljs.NUMBER_MODE,
     ],
   };
@@ -96,7 +116,7 @@ module.exports = function (hljs) {
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
       DOC_COMMENT,
-      hljs.QUOTE_STRING_MODE,
+      STRING,
       hljs.NUMBER_MODE,
     ],
   };

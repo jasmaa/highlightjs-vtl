@@ -32,6 +32,16 @@ exports[`VTL syntax highlighting highlights syntax for basic/directive.vm 1`] = 
 <span class=\\"hljs-title function_\\">#</span><span class=\\"hljs-punctuation\\">{</span>end<span class=\\"hljs-punctuation\\">}</span>"
 `;
 
+exports[`VTL syntax highlighting highlights syntax for basic/escapes.vm 1`] = `
+"\\\\
+\\\\\\\\
+\\\\#
+\\\\$
+\\\\#end
+\\\\$a
+\\\\# end"
+`;
+
 exports[`VTL syntax highlighting highlights syntax for basic/hello-world.vm 1`] = `
 "<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Velocity&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
 Hello <span class=\\"hljs-variable\\">$name</span> World!"

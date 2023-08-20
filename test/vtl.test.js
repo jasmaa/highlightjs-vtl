@@ -5,6 +5,7 @@ const hljsVtl = require("../src/vtl.js");
 
 const filePaths = [
   "basic/hello-world.vm",
+  "basic/escapes.vm",
   "basic/directive.vm",
   "basic/string-interp.vm",
 ];

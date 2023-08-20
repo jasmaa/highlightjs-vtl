@@ -4,10 +4,15 @@ Description: Velocity is a Java-based template engine. It permits anyone to use 
 Website: https://velocity.apache.org/
 Category: web
 */
-
-// TODO: account for curly directive: http://people.apache.org/~henning/velocity/html/ch03.html
-// TODO: account for escape: http://people.apache.org/~henning/velocity/html/ch03s04.html
 module.exports = function (hljs) {
+  const ESCAPED_DIRECTIVE = {
+    match: /\\#\w+/,
+  };
+
+  const ESCAPED_IDENTIFIER = {
+    match: /\\\$\w+\b/,
+  };
+
   const KEYWORD = {
     match: /\b(?:in)\b/,
     scope: "keyword",
@@ -95,10 +100,8 @@ module.exports = function (hljs) {
     beginScope: "punctuation",
     endScope: "punctuation",
     contains: [
-      {
-        match: /hello/,
-        scope: "title.function",
-      },
+      ESCAPED_DIRECTIVE,
+      ESCAPED_IDENTIFIER,
       KEYWORD,
       "self",
       DIRECTIVE,
@@ -117,6 +120,8 @@ module.exports = function (hljs) {
 
   return {
     contains: [
+      ESCAPED_DIRECTIVE,
+      ESCAPED_IDENTIFIER,
       KEYWORD,
       ARGS,
       DIRECTIVE,

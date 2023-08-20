@@ -7,5 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- Add syntax for directive with curlies
+- Fix bug where operators were getting highlighted outside of args
+- Fix bug where range was getting highlighted as punctuation
 - Add syntax for string interpolation (http://people.apache.org/~henning/velocity/html/ch09s05.html)
 - Initial release

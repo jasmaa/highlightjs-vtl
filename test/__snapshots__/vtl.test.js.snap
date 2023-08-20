@@ -1,29 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`VTL syntax highlighting highlights syntax for basic/directive.vm 1`] = `
+"<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;apple&quot;</span><span class=\\"hljs-punctuation\\">)</span>
+
+<span class=\\"hljs-title function_\\">#include</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-string\\">&quot;header.html&quot;</span><span class=\\"hljs-punctuation\\">)</span>
+
+<span class=\\"hljs-title function_\\">#parse</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-string\\">&quot;header.vm&quot;</span><span class=\\"hljs-punctuation\\">)</span>
+
+<span class=\\"hljs-title function_\\">#stop</span>
+
+
+<span class=\\"hljs-title function_\\">#foreach</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$i</span> <span class=\\"hljs-keyword\\">in</span> <span class=\\"hljs-punctuation\\">[</span><span class=\\"hljs-number\\">1</span><span class=\\"hljs-operator\\">..</span><span class=\\"hljs-number\\">10</span><span class=\\"hljs-punctuation\\">]</span><span class=\\"hljs-punctuation\\">)</span>
+  The count is <span class=\\"hljs-variable\\">$i</span>
+<span class=\\"hljs-title function_\\">#end</span>
+
+<span class=\\"hljs-title function_\\">#literal</span>
+ This is a literal block of text
+<span class=\\"hljs-title function_\\">#end</span>
+
+<span class=\\"hljs-title function_\\">#if</span> <span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$fruit</span> <span class=\\"hljs-operator\\">=</span><span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;apple&quot;</span><span class=\\"hljs-punctuation\\">)</span>
+  This is an apple.
+<span class=\\"hljs-title function_\\">#else</span>
+  This is not an apple.
+<span class=\\"hljs-title function_\\">#end</span>
+
+
+<span class=\\"hljs-title function_\\">#</span><span class=\\"hljs-punctuation\\">{</span>set<span class=\\"hljs-punctuation\\">}</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;apple&quot;</span><span class=\\"hljs-punctuation\\">)</span>
+
+<span class=\\"hljs-title function_\\">#</span><span class=\\"hljs-punctuation\\">{</span>foreach<span class=\\"hljs-punctuation\\">}</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$i</span> <span class=\\"hljs-keyword\\">in</span> <span class=\\"hljs-punctuation\\">[</span><span class=\\"hljs-number\\">1</span><span class=\\"hljs-operator\\">..</span><span class=\\"hljs-number\\">10</span><span class=\\"hljs-punctuation\\">]</span><span class=\\"hljs-punctuation\\">)</span>
+ The count is <span class=\\"hljs-variable\\">$i</span>
+<span class=\\"hljs-title function_\\">#</span><span class=\\"hljs-punctuation\\">{</span>end<span class=\\"hljs-punctuation\\">}</span>"
+`;
+
 exports[`VTL syntax highlighting highlights syntax for basic/hello-world.vm 1`] = `
-"<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Velocity&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-Hello <span class=\\"hljs-variable\\">$name</span> World<span class=\\"hljs-operator\\">!</span>"
+"<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Velocity&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+Hello <span class=\\"hljs-variable\\">$name</span> World!"
 `;
 
 exports[`VTL syntax highlighting highlights syntax for basic/string-interp.vm 1`] = `
-"<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+"<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
 
-The clock is <span class=\\"hljs-variable\\">$size</span><span class=\\"hljs-variable\\">$name</span><span class=\\"hljs-punctuation\\">.</span>
-
-
-<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-
-<span class=\\"hljs-title function_\\">#set</span>(<span class=\\"hljs-variable\\">$clock</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;<span class=\\"hljs-variable\\">$size</span><span class=\\"hljs-variable\\">$name</span>&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-
-The clock is <span class=\\"hljs-variable\\">$clock</span><span class=\\"hljs-punctuation\\">.</span>
+The clock is <span class=\\"hljs-variable\\">$size</span><span class=\\"hljs-variable\\">$name</span>.
 
 
-<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
-<span class=\\"hljs-title function_\\">#set</span>( <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
 
-<span class=\\"hljs-title function_\\">#set</span>(<span class=\\"hljs-variable\\">$clock</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;<span class=\\"hljs-variable\\">$</span><span class=\\"hljs-punctuation\\">{</span>size<span class=\\"hljs-punctuation\\">}</span>Tall<span class=\\"hljs-variable\\">$name</span>&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$clock</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;<span class=\\"hljs-variable\\">$size</span><span class=\\"hljs-variable\\">$name</span>&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
 
-The clock is <span class=\\"hljs-variable\\">$clock</span><span class=\\"hljs-punctuation\\">.</span>"
+The clock is <span class=\\"hljs-variable\\">$clock</span>.
+
+
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$size</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Big&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span> <span class=\\"hljs-variable\\">$name</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;Ben&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+
+<span class=\\"hljs-title function_\\">#set</span><span class=\\"hljs-punctuation\\">(</span><span class=\\"hljs-variable\\">$clock</span> <span class=\\"hljs-operator\\">=</span> <span class=\\"hljs-string\\">&quot;<span class=\\"hljs-variable\\">$</span><span class=\\"hljs-punctuation\\">{</span>size<span class=\\"hljs-punctuation\\">}</span>Tall<span class=\\"hljs-variable\\">$name</span>&quot;</span> <span class=\\"hljs-punctuation\\">)</span>
+
+The clock is <span class=\\"hljs-variable\\">$clock</span>."
 `;

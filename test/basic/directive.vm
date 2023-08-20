@@ -1,0 +1,29 @@
+#set($name = "apple")
+
+#include("header.html")
+
+#parse("header.vm")
+
+#stop
+
+
+#foreach($i in [1..10])
+  The count is $i
+#end
+
+#literal
+ This is a literal block of text
+#end
+
+#if ($fruit == "apple")
+  This is an apple.
+#else
+  This is not an apple.
+#end
+
+
+#{set}($name = "apple")
+
+#{foreach}($i in [1..10])
+ The count is $i
+#{end}

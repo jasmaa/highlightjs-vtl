@@ -18,14 +18,12 @@ module.exports = function (hljs) {
     scope: "variable",
   };
 
-  const METHOD = {
-    match: /(?<=\.)\w+\s*(?=\()/,
-    scope: "property",
-  };
-
   const PROPERTY = {
-    match: /(?<=\w\.)\w+/,
-    scope: "property",
+    match: [/\./, /\w+/],
+    scope: {
+      1: "punctuation",
+      2: "property",
+    },
   };
 
   const OPERATOR = {
@@ -34,7 +32,7 @@ module.exports = function (hljs) {
   };
 
   const PUNCTUATION = {
-    match: /(?:,|\.|\[|\]|\(|\)|{|})/,
+    match: /(?:,|\.|\[|\]|{|})/,
     scope: "punctuation",
   };
 
@@ -81,21 +79,34 @@ module.exports = function (hljs) {
     scope: "title.function",
   };
 
-  const DIRECTIVE_WITH_ARGS = {
-    begin: [/#\w+/, /\s*/, /\(/],
-    end: /\)/,
+  const DIRECTIVE_WITH_CURLIES = {
+    begin: [/#/, /{/],
+    end: /}/,
     beginScope: {
       1: "title.function",
+      2: "punctuation",
     },
+    endScope: "punctuation",
+  };
+
+  const ARGS = {
+    begin: /\(/,
+    end: /\)/,
+    beginScope: "punctuation",
+    endScope: "punctuation",
     contains: [
+      {
+        match: /hello/,
+        scope: "title.function",
+      },
+      KEYWORD,
       "self",
       DIRECTIVE,
-      KEYWORD,
+      DIRECTIVE_WITH_CURLIES,
       IDENTIFIER,
-      METHOD,
       PROPERTY,
-      PUNCTUATION,
       OPERATOR,
+      PUNCTUATION,
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
       DOC_COMMENT,
@@ -107,12 +118,11 @@ module.exports = function (hljs) {
   return {
     contains: [
       KEYWORD,
-      DIRECTIVE_WITH_ARGS,
+      ARGS,
       DIRECTIVE,
+      DIRECTIVE_WITH_CURLIES,
       IDENTIFIER,
-      METHOD,
       PROPERTY,
-      PUNCTUATION,
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
       DOC_COMMENT,

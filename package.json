@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-vtl",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Highlight.js syntax for VTL",
   "main": "src/vtl.js",
   "scripts": {

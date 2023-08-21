@@ -1,7 +1,7 @@
 {
   "name": "highlightjs-vtl",
   "version": "1.0.0",
-  "description": "",
+  "description": "Highlight.js syntax for VTL",
   "main": "src/vtl.js",
   "scripts": {
     "build": "webpack --mode=production",

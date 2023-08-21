@@ -46,14 +46,14 @@ Import modules in Node:
 
 ```js
 const hljs = require("highlight.js");
-const hljsvtl = require("highlightjs-vtl");
+const hljsVtl = require("highlightjs-vtl");
 
 const code = `
 #set( $name = "Velocity" )
 Hello $name World!
 `;
 
-hljs.registerLanguage("vtl", hljsvtl);
+hljs.registerLanguage("vtl", hljsVtl);
 const result = hljs.highlight(code, {
   language: "vtl",
 });

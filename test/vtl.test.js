@@ -11,6 +11,7 @@ const filePaths = [
   "basic/variables.vm",
   "basic/properties.vm",
   "basic/methods.vm",
+  "basic/nested-identifiers.vm",
   "basic/operators.vm",
   "basic/string-interp.vm",
 ];

@@ -41,6 +41,16 @@ module.exports = function (hljs) {
     scope: "operator",
   };
 
+  const CURLY_BRACE = {
+    match: /(?:{|})/,
+    scope: "punctuation",
+  };
+
+  const PARENTHESIS = {
+    match: /(?:\(|\))/,
+    scope: "punctuation",
+  };
+
   const PUNCTUATION = {
     match: /(?:,|\.|\[|\])/,
     scope: "punctuation",
@@ -60,10 +70,7 @@ module.exports = function (hljs) {
         },
         endScope: "punctuation",
       },
-      {
-        match: /\$\w+/,
-        scope: "variable",
-      },
+      IDENTIFIER,
     ],
   };
 
@@ -115,6 +122,7 @@ module.exports = function (hljs) {
       IDENTIFIER,
       PROPERTY,
       OPERATOR,
+      CURLY_BRACE,
       PUNCTUATION,
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
@@ -124,7 +132,6 @@ module.exports = function (hljs) {
     ],
   };
 
-  // TODO: figure out how to include IDENTIFIER_WITH_CURLIES inside ARGS
   const IDENTIFIER_WITH_CURLIES = {
     begin: [/\$/, /{/],
     end: /}/,
@@ -136,12 +143,21 @@ module.exports = function (hljs) {
     contains: [
       ESCAPED_DIRECTIVE,
       ESCAPED_IDENTIFIER,
-      ARGS,
+      KEYWORD,
+      LITERAL,
+      DIRECTIVE,
+      DIRECTIVE_WITH_CURLIES,
+      IDENTIFIER,
+      "self",
       PROPERTY,
+      OPERATOR,
+      PARENTHESIS,
       PUNCTUATION,
       SINGLE_LINE_COMMENT,
       MULTI_LINE_COMMENT,
       DOC_COMMENT,
+      STRING,
+      hljs.NUMBER_MODE,
     ],
   };
 

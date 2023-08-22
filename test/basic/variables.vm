@@ -4,5 +4,8 @@ $foo-bar
 $foo_bar
 $fooBar1
 
+$!fruit
 
 ${fruit}
+
+$!{fruit}

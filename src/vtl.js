@@ -10,7 +10,7 @@ module.exports = function (hljs) {
   };
 
   const ESCAPED_IDENTIFIER = {
-    match: /\\\$[\w\-]+\b/,
+    match: /\\\$!?[\w\-]+\b/,
   };
 
   const LITERAL = {
@@ -24,7 +24,7 @@ module.exports = function (hljs) {
   };
 
   const IDENTIFIER = {
-    match: /\$[\w\-]+/,
+    match: /\$!?[\w\-]+/,
     scope: "variable",
   };
 
@@ -133,7 +133,7 @@ module.exports = function (hljs) {
   };
 
   const IDENTIFIER_WITH_CURLIES = {
-    begin: [/\$/, /{/],
+    begin: [/\$!?/, /{/],
     end: /}/,
     beginScope: {
       1: "variable",

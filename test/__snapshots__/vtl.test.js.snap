@@ -142,6 +142,9 @@ exports[`VTL syntax highlighting highlights syntax for basic/variables.vm 1`] = 
 <span class=\\"hljs-variable\\">$foo_bar</span>
 <span class=\\"hljs-variable\\">$fooBar1</span>
 
+<span class=\\"hljs-variable\\">$!fruit</span>
 
-<span class=\\"hljs-variable\\">$</span><span class=\\"hljs-punctuation\\">{</span>fruit<span class=\\"hljs-punctuation\\">}</span>"
+<span class=\\"hljs-variable\\">$</span><span class=\\"hljs-punctuation\\">{</span>fruit<span class=\\"hljs-punctuation\\">}</span>
+
+<span class=\\"hljs-variable\\">$!</span><span class=\\"hljs-punctuation\\">{</span>fruit<span class=\\"hljs-punctuation\\">}</span>"
 `;
